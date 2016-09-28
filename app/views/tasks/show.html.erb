@@ -2,3 +2,11 @@
 <p>
   <%= @current_task[:description] %>
 </p>
+<p>
+  <% if @current_task[:completed_at] == nil %>
+    <%= "Task Not Complete" %>
+  <% else %>
+    <%= "Task completed at #{@current_task[:completed_at]}" %>
+  <% end %>
+  <%= link_to("Delete", delete_path(@current_task[:id])) %>
+</p>

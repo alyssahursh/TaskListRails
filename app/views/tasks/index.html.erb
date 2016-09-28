@@ -2,12 +2,20 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
+      <% if task[:completed_at] == nil %>
+        <%= '▢' %>
+      <% else %>
+        <%= "✔" %>
+      <% end %>
       <%= link_to(task[:title], show_path(task[:id])) %>: <%= task[:description] %>
       <% if task[:completed_at] == nil %>
-        <%= "Task Not Complete" %>
+        <%= link_to("Mark as Complete", complete_path(task[:id])) %>
       <% else %>
         <%= "Task completed at #{task[:completed_at]}" %>
       <% end %>
+      <%= link_to("Delete", delete_path(task[:id])) %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to("Add a new task", new_path) %>

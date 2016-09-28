@@ -1,0 +1,9 @@
+<h1>Are you sure you want to delete this task?</h1>
+<ul>
+  <li>
+    <%= link_to("Yes, Delete!", destroy_path(@current_task[:id]), method: 'delete') %>
+  </li>
+  <li>
+    <%= link_to("No, Please don't delete!", index_path) %>
+  </li>
+</ul>
