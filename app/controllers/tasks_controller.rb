@@ -6,83 +6,52 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def create
-    Task.create(title: params[:task][:title], description: params[:task][:description])
+  def go_home
     redirect_to action: 'index'
   end
 
-  def show
-    @tasks = Task.all
-    @current_task = nil
+  def current_task
+    Task.find(params[:id].to_i)
+  end
 
-    @tasks.each do |task|
-      index = params[:id].to_i
-      if task[:id] == index
-        @current_task = task
-      end
-    end
+  def create
+    Task.create(title: params[:task][:title], description: params[:task][:description])
+    go_home
+  end
+
+  def show
+    @current_task = current_task
   end
 
   def new
   end
 
   def edit
-    @tasks = Task.all
-    @current_task = nil
-
-    @tasks.each do |task|
-      index = params[:id].to_i
-      if task[:id] == index
-        @current_task = task
-      end
-    end
+    @current_task = current_task
   end
 
   def update
-    Task.update(title: params[:title], description: params[:description])
-    redirect_to action: 'index'
+    @current_task = current_task
+    @current_task.title = params[:title]
+    @current_task.description = params[:description]
+    @current_task.save
+    go_home
   end
 
   def complete
-    @tasks = Task.all
-    @current_task = nil
-
-    @tasks.each do |task|
-      index = params[:id].to_i
-      if task[:id] == index
-        task[:completed_at] = Time.now
-        task.save
-      end
-    end
-
-    redirect_to action: 'index'
-
+    @current_task = current_task
+    @current_task.completed_at = Time.now
+    @current_task.save
+    go_home
   end
 
   def delete
-    @tasks = Task.all
-    @current_task = nil
-
-    @tasks.each do |task|
-      index = params[:id].to_i
-      if task[:id] == index
-        @current_task = task
-      end
-    end
+    @current_task = current_task
   end
 
   def destroy
-    @tasks = Task.all
-    @current_task = nil
-
-    @tasks.each do |task|
-      index = params[:id].to_i
-      if task[:id] == index
-        @current_task = task
-      end
-    end
-
+    @current_task = current_task
     @current_task.destroy
-    redirect_to action: 'index'
+    go_home
   end
 end

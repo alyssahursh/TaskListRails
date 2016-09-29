@@ -24,8 +24,8 @@
       <% end %>
 
 
-      <%= link_to("Delete", delete_path(task[:id])) %>
 
+      <%= button_to "Delete Task", { action: 'destroy', id: task.id }, method: :delete, data: { confirm: "Are you sure?" } %>
 
     </li>
   <% end %>

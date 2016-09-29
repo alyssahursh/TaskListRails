@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   delete 'tasks/:id/destroy' => 'tasks#destroy', as: 'destroy'
 
-  get 'tasks/:id/delete' => 'tasks#delete', as: 'delete'
+  # get 'tasks/:id/delete' => 'tasks#delete', as: 'delete'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
