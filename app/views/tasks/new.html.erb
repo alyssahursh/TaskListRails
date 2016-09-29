@@ -1,8 +1,15 @@
 <h1>Add a new task</h1>
-<form action="create" method="post" accept-charset="utf-8">
-  <label for="Title">Task Title</label>
-  <input type="text" name="title" id="title" />
-  <label for="Description">Task Description</label>
-  <input type="text" name="description" id="description" />
-  <input type="submit" value="Add Task" />
-</form>
+
+<section class="form">
+
+  <%= form_for :task, url: { action: 'create' } do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
+
+    <%= f.label :desription %>:
+    <%= f.text_field :description %><br />
+
+    <%= f.submit %>
+  <% end %>
+
+</section>

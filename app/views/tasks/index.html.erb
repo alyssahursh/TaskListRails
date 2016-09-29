@@ -2,18 +2,31 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
+
+
       <% if task[:completed_at] == nil %>
         <%= '▢' %>
       <% else %>
         <%= "✔" %>
       <% end %>
+
+
       <%= link_to(task[:title], show_path(task[:id])) %>: <%= task[:description] %>
+
+
+      <%= link_to("Edit Task", edit_path(task[:id])) %>
+
+
       <% if task[:completed_at] == nil %>
         <%= link_to("Mark as Complete", complete_path(task[:id])) %>
       <% else %>
         <%= "Task completed at #{task[:completed_at]}" %>
       <% end %>
+
+
       <%= link_to("Delete", delete_path(task[:id])) %>
+
+
     </li>
   <% end %>
 </ul>

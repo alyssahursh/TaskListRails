@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.create(title: params[:title], description: params[:description])
+    Task.create(title: params[:task][:title], description: params[:task][:description])
     redirect_to action: 'index'
   end
 
@@ -27,9 +27,20 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @tasks = Task.all
+    @current_task = nil
+
+    @tasks.each do |task|
+      index = params[:id].to_i
+      if task[:id] == index
+        @current_task = task
+      end
+    end
   end
 
   def update
+    Task.update(title: params[:title], description: params[:description])
+    redirect_to action: 'index'
   end
 
   def complete

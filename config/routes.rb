@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   get 'tasks/new' => 'tasks#new', as: 'new'
 
-  get 'tasks/edit'
+  get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
-  get 'tasks/update'
+  get 'tasks/:id/update' => 'tasks#update', as: 'update'
 
   get 'tasks/:id/complete' => 'tasks#complete', as: 'complete'
 

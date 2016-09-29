@@ -1,2 +1,8 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<h1>Edit Task</h1>
+<form action="update" method="put" accept-charset="utf-8">
+  <label for="Title">Task Title</label>
+  <input type="text" name="title" id="title" value= <%= @current_task[:title]%>/>
+  <label for="Description">Task Description</label>
+  <input type="text" name="description" id="description" value= <%= @current_task[:description]%>/>
+  <input type="submit" value="Update Task" />
+</form>
