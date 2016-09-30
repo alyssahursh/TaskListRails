@@ -32,8 +32,8 @@ class TasksController < ApplicationController
 
   def update
     @current_task = current_task
-    @current_task.title = params[:title]
-    @current_task.description = params[:description]
+    @current_task.title = params[:task][:title]
+    @current_task.description = params[:task][:description]
     @current_task.save
     go_home
   end
@@ -41,6 +41,13 @@ class TasksController < ApplicationController
   def complete
     @current_task = current_task
     @current_task.completed_at = Time.now
+    @current_task.save
+    go_home
+  end
+
+  def uncomplete
+    @current_task = current_task
+    @current_task.completed_at = nil
     @current_task.save
     go_home
   end

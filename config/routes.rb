@@ -16,9 +16,11 @@ Rails.application.routes.draw do
 
   get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
-  get 'tasks/:id/update' => 'tasks#update', as: 'update'
+  put 'tasks/:id/update' => 'tasks#update', as: 'update'
 
-  get 'tasks/:id/complete' => 'tasks#complete', as: 'complete'
+  put 'tasks/:id/complete' => 'tasks#complete', as: 'complete'
+
+  put 'tasks/:id/uncomplete' => 'tasks#uncomplete', as: 'uncomplete'
 
   delete 'tasks/:id/destroy' => 'tasks#destroy', as: 'destroy'
 

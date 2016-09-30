@@ -1,3 +1,29 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+li {
+  list-style: none;
+  height: 3vw;
+}
+
+li div {
+  display: inline-block;
+}
+
+li div:first-of-type,
+li div:nth-of-type(3), {
+  width: 4vw;
+}
+
+li div:nth-of-type(2) {
+  width: 30vw;
+}
+
+li div:nth-of-type(4),{
+  width: 8vw;
+}
+
+.button {
+  background-color: none;
+  border: none;
+}

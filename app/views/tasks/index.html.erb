@@ -2,33 +2,36 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
+      <div>
+        <% if task[:completed_at] == nil %>
+          <%= button_to "▢", { action: 'complete', id: task.id }, method: :put %>
+        <% else %>
+          <%= button_to "✔", { action: 'uncomplete', id: task.id }, method: :put %>
+        <% end %>
+      </div>
 
+      <div>
+        <%= link_to(task[:title], show_path(task[:id])) %>: <%= task[:description] %>
+      </div>
 
-      <% if task[:completed_at] == nil %>
-        <%= '▢' %>
-      <% else %>
-        <%= "✔" %>
-      <% end %>
+      <div class="edit">
+        <%= button_to "Edit", { action: 'edit', id: task.id }, method: :get %>
+      </div>
 
+      <div>
+        <%= button_to "Delete Task", { action: 'destroy', id: task.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
 
-      <%= link_to(task[:title], show_path(task[:id])) %>: <%= task[:description] %>
-
-
-      <%= link_to("Edit Task", edit_path(task[:id])) %>
-
-
-      <% if task[:completed_at] == nil %>
-        <%= link_to("Mark as Complete", complete_path(task[:id])) %>
-      <% else %>
-        <%= "Task completed at #{task[:completed_at]}" %>
-      <% end %>
-
-
-
-      <%= button_to "Delete Task", { action: 'destroy', id: task.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+      <div>
+        <% if task[:completed_at] != nil %>
+          <%= "Task completed at #{task[:completed_at]}" %>
+        <% end %>
+      </div>
 
     </li>
+  </br>
   <% end %>
+
 </ul>
 
 <%= link_to("Add a new task", new_path) %>
