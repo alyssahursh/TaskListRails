@@ -7,7 +7,7 @@
           <%= button_to "▢", { action: 'update', id: task.id, complete: 'true' }, method: :put %>
 
         <% else %>
-          <%= button_to "✔", { action: 'update', complete: 'false', id: task.id }, method: :put %>
+          <%= button_to "✔", { action: 'update', id: task.id, complete: 'false' }, method: :put %>
         <% end %>
       </div>
 

@@ -4,9 +4,13 @@
 </p>
 <p>
   <% if @current_task[:completed_at] == nil %>
-    <%= "Task Not Complete" %>
+    <%= button_to "Mark Complete", { action: 'update', id: @current_task.id, complete: 'true' }, method: :put %>
   <% else %>
-    <%= "Task completed at #{@current_task[:completed_at]}" %>
+    <%= "Completed on #{@current_task[:completed_at].strftime("%A, %B %d")}" %>
+    <%= button_to "Uncomplete", { action: 'update', id: @current_task.id, complete: 'false' }, method: :put %>
   <% end %>
+
   <%= button_to "Delete Task", { action: 'destroy', id: @current_task.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+
+  <%= button_to "Home", { action: 'index' },  method: :get %>
 </p>

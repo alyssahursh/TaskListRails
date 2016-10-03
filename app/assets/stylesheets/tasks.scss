@@ -5,11 +5,27 @@
   font-family: Helvetica;
 }
 
+body {
+  width: 70vw;
+  margin: auto;
+}
 
+h1 {
+  font-size: 3vw;
+  padding: 3vw;
+  text-align: center;
+}
+
+input {
+  background-color: #d8d8d8;
+  padding: .5vw;
+  margin: .5vw 0;
+
+}
 
 li {
   list-style: none;
-  height: 3vw;
+  height: 2vw;
 }
 
 li div {
