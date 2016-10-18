@@ -1,3 +1,29 @@
+#Refelection
+
+###What went well?
+- I made it work once, then I refactored using only "resources :tasks" and sticking to just the index/create/new/edit/update/destroy methods. Kid brother said that's better? I don't know.
+
+
+###What are you still working on understandng better?
+- Syntax! It seems like many approaches to syntax make functioning code, but I'm not sure which syntax is prefered. It all feels really willy-nilly. I spent a lot of time going back and forth between symbols, names in single quotes, { } around various things, etc. Where is the rulebook on syntax?
+- What goes in the model???
+- How do I avoid having logic in the view?
+- How do you handle CSS effectively (more information on "yield")
+- Why is params sometimes inside another hash?
+
+###What did your chair pair do differently?
+- Sabrina got a checkbox working on her edit page! It involved an additional method in her controller. 
+
+
+
+
+
+
+
+
+
+
+
 # Task List Rails ✅
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
