@@ -5,9 +5,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Use SCSS for stylesheets
+# Use Omni-Auth for login
 gem 'omniauth'
+# Use Omni-Auth Github for login
 gem 'omniauth-github'
+# Chris just really likes this:
 gem 'awesome_print'
 
 
