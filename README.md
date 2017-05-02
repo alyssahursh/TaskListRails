@@ -1,35 +1,13 @@
-#Refelection
-
-###What went well?
-- I made it work once, then I refactored using only "resources :tasks" and sticking to just the index/create/new/edit/update/destroy methods. Kid brother said that's better? I don't know.
+# Task List Rails
+This was one of our earliest Ruby on Rails assignments. We were asked to make a small to-do list app while focusing on Rails conventions. 
 
 
-###What are you still working on understandng better?
-- Syntax! It seems like many approaches to syntax make functioning code, but I'm not sure which syntax is prefered. It all feels really willy-nilly. I spent a lot of time going back and forth between symbols, names in single quotes, { } around various things, etc. Where is the rulebook on syntax?
-- What goes in the model???
-- How do I avoid having logic in the view?
-- How do you handle CSS effectively (more information on "yield")
-- Why is params sometimes inside another hash?
-
-###What did your chair pair do differently?
-- Sabrina got a checkbox working on her edit page! It involved an additional method in her controller. 
-
-
-
-
-
-
-
-
-
-
-
-# Task List Rails ✅
+## Task List Rails Assignment
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
 Tracking tasks in a web app will let us focus on following Rails conventions and learning how data flows through a Rails application.
 
-## Baseline
+### Baseline
 **Once you've achieved this baseline, take a walk around the room and see if you can answer questions or help other folks.**
 
 This project...
@@ -46,7 +24,7 @@ Baseline Part 2:
 
 Tinker with your Model in the `rails console` in order to ensure you have created your model and can interact with it as expected.
 
-## Task Data Requirements
+### Task Data Requirements
 
 Each task record will include all of the following. Optional in this context means that the user may choose not to provide this information, but it is still required for your schema:
 - Self-incrementing identifier (ID)
@@ -54,7 +32,7 @@ Each task record will include all of the following. Optional in this context mea
 - description: details about the task
 - completed_at: the time and date the task was completed
 
-## 🌊 Wave 1
+### 🌊 Wave 1
 This wave is where we will introduce the view layer to interact with our application via the browser.
 
 - Set up necessary controller(s) and route(s) that you will need in order to show a task from the database
@@ -64,7 +42,7 @@ This wave is where we will introduce the view layer to interact with our applica
 - All markup in all views should have semantic relevance.
 
 
-## 🌊 Wave 2
+### 🌊 Wave 2
 In this wave we will add the first set of user interactivity and persistence.
 
 - Be able to create a new task:
@@ -76,7 +54,7 @@ In this wave we will add the first set of user interactivity and persistence.
     1. Ask the user to confirm that they definitely want to delete the task.
     1. Delete the task from the database and redirect the user back to the list of remaining tasks
 
-<!-- ## 🌊 Wave 3
+### 🌊 Wave 3
 In this wave we will extend the interactivity with users, allowing them to edit existing tasks in a couple of different ways. As always, follow _RESTful_ conventions when implementing these features.
 
 - Add the ability for the user to mark a task complete
@@ -89,5 +67,3 @@ In this wave we will extend the interactivity with users, allowing them to edit 
   - Link to the `edit` action from the task's `show` page.
   - DRY up your code by reusing the view code from the `new` functionality
     - Hint: Rendering _partials_ in Rails.
-
- -->
